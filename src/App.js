@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { main as useEffect_useState } from "./components/useEffect_useState/MainApp";
+import { useHistory } from "react-router-dom";
 
 function App() {
+  const history = useHistory();
+
+  const goHome = () => {
+    console.log("go home");
+    history.push("/");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => goHome()}>Go Home</button>
     </div>
   );
 }
